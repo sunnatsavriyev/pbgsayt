@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css'  %}">
+    <link rel="stylesheet" href="{% static  'fonts.css'  %}">
+    <link rel="stylesheet" href="{% static  'mian.css' %}">
+    <link rel="stylesheet" href="{% static  'mein.css' %}">
+</head>
+<body>
+        <nav class="navbar navbar-expand-sm">
+          <div class="container-fluid">
+          <div class="leftNav">
+              <div class="logo-brand">
+              <a class="navbar-brand logo" href="#">PUBG ACCOUNTS</a>
+              </div>
+
+              <div class="burger">
+              <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapsibleNavbar"
+              >
+                  <span class="line"
+                  ><img class="line2" src="/images//burger.svg" alt="icon"
+                  /></span>
+              </button>
+              </div>
+          </div>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" style="color: white;" aria-current="page" href="{% url 'index' %}">index</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style="color: white;" href="{% url 'account_page' %}">account</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style="color: white;" href="{% url 'reseler_account' %}">reseler_account</a>
+              </li>
+
+              <p>{{userd.id}}</p>
+              {% if user.is_authenticated %}
+                <div class="dropdown">
+                  <a class="btn acount_btn p-0 dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    
+                    <img style="height: 50px; width: 50px;" src="{{user.profilemodel.profil_image.url}}" alt="">
+                  
+                  </a>
+                
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item" href="{% url 'addacount' user.id %}">addaccount</a></li>
+                    <li><a class="dropdown-item" href="{% url 'editprofil' user.id %}">editprofil</a></li>
+                    <li class="nav-item ms-2">
+                      <a class="nav-link btn btn-primary text-white" href="{% url 'logout' %}">logout</a>
+                    </li>
+                  </ul>
+                </div>
+              {% else %}
+                <li class="nav-item ms-2">
+                  <a class="nav-link btn btn-primary text-white" href="{% url 'login' %}">login</a>
+                </li> 
+                {% comment %} <li class="nav-item ms-2">
+                  <a class="nav-link btn btn-primary text-white" href="{% url 'sign_up' %}">sign_up</a>
+                </li>  {% endcomment %}
+              {% endif %}                          
+                                        
+          </div>
+        </div>
+      </nav>
+        {% block content %}
+
+        {% endblock content %}
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

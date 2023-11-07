@@ -1,0 +1,23 @@
+@font-face {
+    font-family: "C-700", sans-serif;
+    font-weight: 700;
+    src: url(./fonts/Comfortaa-Bold.ttf);
+}
+
+@font-face {
+    font-family: "C-600", sans-serif;
+    font-weight: 600;
+    src: url(./fonts/Comfortaa-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: "C-500", sans-serif;
+    font-weight: 500;
+    src: url(./fonts/Comfortaa-Medium.ttf);
+}
+
+@font-face {
+    font-family: "C-400", sans-serif;
+    font-weight: 400;
+    src: url(./fonts/Comfortaa-Regular.ttf);
+}
