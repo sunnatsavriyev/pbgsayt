@@ -12,13 +12,11 @@ def index(request):
 
 def reseler_account(request):
         projectss= AccountModel.objects.filter(turi='reseler account')
-        al = AccountModel.objects.all().count()
         # view = AccountModel.objects.get(id = resid)
         # view.view += 1
         # view.save()
         ctx={
             'projectss':projectss,
-            'al':al,
             # 'view':view
         }
 
@@ -35,10 +33,11 @@ def addaccountview(request,profilid):
             price = form.cleaned_data['price']
             acount_image = form.cleaned_data['acount_image'] 
             rp = form.cleaned_data['rp']
-            turi = form.cleaned_data['reseler account']    
+            turi = form.cleaned_data['turi']    
             mifik = form.cleaned_data['mifik']    
-            qoshimcha = form.cleaned_data['qoshimcha']    
-            profil_data = AccountModel(level=level,price=price,mifik=mifik,qoshimcha=qoshimcha,acount_image=acount_image, profil=profile_id, rp=rp,turi=turi)
+            qoshimcha = form.cleaned_data['qoshimcha']
+            murojaat_uchun = form.cleaned_data['murojaat_uchun']    
+            profil_data = AccountModel(level=level,price=price,mifik=mifik,qoshimcha=qoshimcha,acount_image=acount_image, profil=profile_id, rp=rp,turi=turi,murojaat_uchun=murojaat_uchun)
             profil_data.save()
             return redirect('account_page')
 
@@ -53,10 +52,11 @@ def addaccountview(request,profilid):
             price = form.cleaned_data['price']
             acount_image = form.cleaned_data['acount_image'] 
             rp = form.cleaned_data['rp']
-            turi = form.cleaned_data['garant account']    
+            turi = form.cleaned_data['reseler account']    
             mifik = form.cleaned_data['mifik']    
-            qoshimcha = form.cleaned_data['qoshimcha']    
-            profil_data = AccountModel(level=level,price=price,mifik=mifik,qoshimcha=qoshimcha,acount_image=acount_image, profil=profile_id, rp=rp,turi=turi)
+            qoshimcha = form.cleaned_data['qoshimcha']
+            murojaat_uchun = form.cleaned_data['murojaat_uchun']    
+            profil_data = AccountModel(level=level,price=price,mifik=mifik,qoshimcha=qoshimcha,acount_image=acount_image, profil=profile_id, rp=rp,turi=turi,murojaat_uchun=murojaat_uchun)
             profil_data.save()
             return redirect('reseller')
 
@@ -142,13 +142,11 @@ def EditProfilView(request,editid):
 
 def account_page(request):
     projects= AccountModel.objects.filter(turi='garant account')
-    al = AccountModel.objects.all().count()
     # view = AccountModel.objects.get(id = accid)
     # view.view += 1
     # view.save()
     ctx={
         'projects':projects,
-        'al':al,
         # 'view':view
     }
 

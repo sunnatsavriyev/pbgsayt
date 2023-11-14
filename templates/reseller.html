@@ -4,61 +4,58 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="./bootstrap-5.0.2-dist/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="main.css" />
+    
   </head>
   <body>
     {% extends 'navbar.html' %}
-    {% block content %}
-    <p><strong class="text-danger">Umumiy projectlar soni: {{al}} ta</strong> </p>
-        
+    {% block content %}   
     <section>
       {% for project in projectss %}
       <div class="container">
         <div class="resPage">
           <div class="card">
             <div class="cardImg">
-              <img style="height: 200px; width: 100%;" src="{{project.acount_image.url}}" alt="">
+              <img style="height: 200px; width: 50%;" src="{{project.acount_image.url}}" alt="">
             </div>
 
             <ul>
               <li>
-                LVL:
+                
                 <span>
-                  <h1 style="margin: 2%;">{{project.level}}</h1>
+                  <h1 style="margin: 2%;">LVL:{{project.level}}</h1>
                 </span>
               </li>
 
               <li>
-                RP:
+                
                 <span>
                   <p style="margin: 2%;">rp: <strong class="text-danger">{{project.rp}}</strong></p>
                 </span>
               </li>
               <li>
-                NARXI:
+                
                 <span>
                   <p style="margin: 2%;">narxi: <strong class="text-danger">{{project.price}}</strong></p>
                 </span>
               </li>
               <li>
-                MIFIK:
+                
                 <span>
                   <p style="margin: 2%;">mifik: <strong class="text-danger">{{project.mifik}}</strong></p>
                 </span>
               </li>
               <li>
-                <p style="margin: 2%;">{{project.qoshimcha}}</p>
+                <p style="margin: 2%;">qo'shimcha: <strong class="text-danger">{{project.qoshimcha}}</strong></p>
               </li>
               <li>
+                <p style="margin: 2%;">murojaat uchun: <strong class="text-danger">{{project.murojaat_uchun}}</strong></p>
+              </li>
+              {% comment %} <li>
                 <img src="/images/glazok.svg" alt="icon" />
                 <span class="glazokNumber">
                   <p>{{ view.view }}</p>
                 </span>
-              </li>
+              </li> {% endcomment %}
               
               <li>
                 <p style="margin: 2%;">{{project.data}}</p>

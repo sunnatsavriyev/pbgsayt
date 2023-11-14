@@ -26,6 +26,7 @@ class AccountModel(models.Model):
     turi = models.CharField(max_length=20, choices=turi, default=None)
     mifik = models.CharField(max_length=100,default='ok')
     qoshimcha = models.CharField(max_length=100,default='qoshimchalar')
+    murojaat_uchun = models.CharField(max_length=100, default='+998')
     def __str__(self) -> str:
         return str(self.name)
     

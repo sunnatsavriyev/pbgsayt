@@ -36,7 +36,7 @@
                       <div class="addItem">
                       <div class="photoAkk">
                         <div class="card_image">
-                          <img style="height: 200px; width: 200px;" src="{{project.project_image.url}}" alt="">
+                          <img style="height: 200px; width: 200px;" src="{{project.acount_image.url}}" alt="">
                         </div>
                       </div>
                       
@@ -45,7 +45,9 @@
                       <p href="{{project.rp}}">rp</p>
                       <br>
                       <p>mifik <strong class="text-primary">{{project.mifik}}</strong></p>
-                      <p>mqoshimcha <strong class="text-primary">{{project.qoshimcha}}</strong></p>
+                      <p>qoshimcha <strong class="text-primary">{{project.qoshimcha}}</strong></p>
+                      <p>turi <strong class="text-primary">{{project.turi}}</strong></p>
+                      <p>murojaat uchun <strong class="text-primary">{{project.murojaat_uchun}}</strong></p>
                       <p>{{project.data}}</p>
 
                       <a class="btn btn-primary" href="{% url 'edit_account' project.id %}">edit_account</a>
